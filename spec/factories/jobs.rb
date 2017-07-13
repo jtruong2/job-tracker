@@ -5,7 +5,7 @@ FactoryGirl.define do
     level_of_interest 60
     city "Denver"
 
-    association :company
+    association :company, :category
   end
 
   sequence :title do |i|
