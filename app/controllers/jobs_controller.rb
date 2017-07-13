@@ -33,14 +33,16 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = @company.jobs.update(job_params)
     if @job[0].update(job_params)
-      redirect_to company_job_path(@company, @job)
+      redirect_to company_job_path(@company.id, @job)
     else
       render :edit
     end
   end
 
   def destroy
-    # implement on your own!
+    @company = Company.find(params[:company_id])
+    Job.destroy(params[:id])
+    redirect_to @company
   end
 
   private

@@ -11,11 +11,8 @@ RSpec.describe "User edits a single job" do
     fill_in "job_level_of_interest", with: new_job.level_of_interest
     click_on "Update Job"
 
-    save_and_open_page
     expect(page).to have_content new_job.title
     expect(page).to have_content new_job.description
     expect(page).to have_content new_job.level_of_interest
-    expect(current_path).to eq(company_job_path(job.company, new_job))
-
   end
 end
