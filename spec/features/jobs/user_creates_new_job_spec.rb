@@ -11,6 +11,8 @@ describe "User creates a new job" do
     fill_in "job[level_of_interest]", with: job.level_of_interest
     fill_in "job[city]", with: job.city
 
+    expect(page).to have_link("create a new category", href: new_category_path)
+
     click_button "Create"
 
     expect(page).to have_content(job.title)

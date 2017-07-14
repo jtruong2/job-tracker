@@ -1,4 +1,6 @@
 <h1>Add new Job Category</h1>
+<%= link_to "Back to job categories", categories_path %><br/><br/>
+
 <%= form_for @category do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

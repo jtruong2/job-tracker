@@ -25,8 +25,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.update(category_params)
-    if @category[0].update(category_params)
+    @category = Category.update(category_params)[0]
+    if @category.update(category_params)
       redirect_to @category
     else
       render :edit

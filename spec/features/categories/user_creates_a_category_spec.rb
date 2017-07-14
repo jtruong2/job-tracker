@@ -12,7 +12,7 @@ RSpec.describe "User creates a new category" do
 
 
       expect(page).to have_content(category.title)
-      expect(page).to have_content("All jobs for #{category.title}'s")
+      expect(page).to have_content("All jobs for #{category.title}")
     end
   end
 
