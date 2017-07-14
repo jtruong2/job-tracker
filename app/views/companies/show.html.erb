@@ -3,3 +3,19 @@ All Jobs for <strong><%= @company.name %></strong>
 <% @company.jobs.each do |job| %>
   <ul><%= job.title %></ul>
 <% end %>
+
+<%= form_for [@company, @contact], url: company_contact_index_path(@company, @contact) do |f| %>
+  <%= f.label "Full name" %>
+  <%= f.text_field :full_name %>
+
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+
+  <%= f.submit %>
+<% end %>

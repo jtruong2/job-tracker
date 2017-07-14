@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :companies do
-    resources :contact, only: [:new, :create, :show]
-    resources :jobs, shallow: true do
-      resources :comments, only: [:new, :create, :show]
+    resources :contact, only: [:create]
+    resources :jobs do
+      resources :comments, only: [:create]
     end
   end
 

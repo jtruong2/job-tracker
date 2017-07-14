@@ -1,0 +1,6 @@
+<%= form_for [@company, @job, @comment], url: company_job_comments_path(@company, @job, @comment) do |f|%>
+  <%= f.label :Enter_a_comment %>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+<% end %>
