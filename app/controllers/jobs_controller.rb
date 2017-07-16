@@ -48,6 +48,10 @@ class JobsController < ApplicationController
     redirect_to @company
   end
 
+  def all_jobs
+    @jobs = Job.all
+  end
+
   private
 
   def job_params

@@ -1,7 +1,8 @@
 All Jobs for <strong><%= @company.name %></strong>
+<%= link_to 'Go back', companies_path %>
 
 <% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
+  <ul><%= link_to job.title, company_job_path(job) %></ul>
 <% end %>
 <p><strong>Contact info: </strong></p>
 <%= render partial: 'companies/contact', collection: @company.contacts %>
