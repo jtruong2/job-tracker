@@ -10,4 +10,7 @@ root to: "welcome#index"
   end
 
  get '/jobs', to:'jobs#all_jobs'
+
+ get '/dashboard', to:'welcome#dashboard'
+ 
 end

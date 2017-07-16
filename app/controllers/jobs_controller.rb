@@ -50,6 +50,8 @@ class JobsController < ApplicationController
 
   def all_jobs
     @jobs = Job.all
+
+
   end
 
   private
