@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-root to: "welcome#index"
+  root to: "welcome#index"
+
   resources :categories
 
   resources :companies do
@@ -9,8 +10,9 @@ root to: "welcome#index"
     end
   end
 
- get '/jobs', to:'jobs#all_jobs'
+   get '/jobs', to:'jobs#all_jobs'
 
- get '/dashboard', to:'welcome#dashboard'
- 
+   get '/dashboard', to:'dashboard#index'
+
+   post '/jobs', to: 'jobs#all_jobs'
 end

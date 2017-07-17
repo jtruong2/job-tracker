@@ -1,6 +1,12 @@
-<p>sort by: 
+<p>All Jobs</p>
+
+<form method="get">
+  <% @options = Job.get_attributes %>
+  <p>sort by: <%= select_tag("sort", options_for_select(@options)) %></p>
+  <input type="submit" value="Filter" />
+</form>
 <ul>
   <% @jobs.each do |job| %>
-    <li><%= job.title %></li>
+    <li><%= link_to job.title, company_job_path(job.company_id, job.id)%> / city: <%= job.city %> / interest: <%= job.level_of_interest %></li><br/>
   <% end %>
 </ul>
