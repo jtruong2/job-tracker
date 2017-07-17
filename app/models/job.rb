@@ -22,4 +22,12 @@ class Job < ApplicationRecord
   def sort_date
     Job.all.order(:created_at => :desc)
   end
+
+  def self.jobs_by_city(city)
+    @jobs_in_city = Job.where(city: city)
+  end
+
+  def self.get_cities
+    Job.pluck(:city).uniq
+  end
 end

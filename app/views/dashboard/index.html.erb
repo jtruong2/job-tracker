@@ -1,6 +1,14 @@
 
 <h1>Jobs Dashboard</h1>
-<p>Level of Interest by count: <p>
+<p><strong>Job count by interest level:</strong> <p>
 <% @interests.each do |k,v| %>
   <p>level <%= k %>: <%= v %></p>
 <% end %>
+<p><strong>Top companies by average level of interest</strong></p>
+<% @top_average_level_of_interest.each do |k,v| %>
+  <p><%=  Company.find(k).name %>: <%= v.to_f.round(2) %></p>
+<% end %>
+<p><strong>Job counts by city:</strong></p>
+  <% @count_jobs_by_city.each do |k,v| %>
+    <p><%= link_to k, "/jobs?location=#{k}"  %>: <%= v %></p>
+  <% end %>

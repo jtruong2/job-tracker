@@ -52,6 +52,7 @@ class JobsController < ApplicationController
     @jobs = Job.all
     @jobs = Job.sort_city if params[:sort] == "city"
     @jobs = Job.sort_level_of_interest if params[:sort] == "interest"
+    @jobs = Job.jobs_by_city(params[:location]) if params[:location]
   end
 
   private

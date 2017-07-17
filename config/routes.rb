@@ -15,4 +15,5 @@ Rails.application.routes.draw do
    get '/dashboard', to:'dashboard#index'
 
    post '/jobs', to: 'jobs#all_jobs'
+
 end

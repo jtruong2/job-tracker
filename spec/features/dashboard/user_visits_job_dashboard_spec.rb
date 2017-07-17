@@ -1,15 +1,19 @@
 require 'rails_helper'
-RSpec.describe "User visits dashboard"
+RSpec.describe "User visits /jobs"
   scenario "sees a list of jobs sorted by city" do
     job1 = create(:job)
     job2 = create(:job, city: "Seattle")
     job3 = create(:job, city: "Miami")
 
     visit '/jobs'
-
-    select("location", from: "sort").selct_option
+    select("location", from: "sort").select_option
+    click_on "filter"
 
     expect(page).to
+  end
+
+  scenario "sees a list of jobs sorted by interest" do
+
   end
 
   scenario "sees jobs with count by level of interest" do
